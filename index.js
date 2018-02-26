@@ -62,9 +62,16 @@ function removeFromCart(item) {
       return cart
     }
   }
+  // if item doesn't match
   console.log("That item is not in your cart.")
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  var totalCost = total()
+  if (cardNumber === null || cardNumber === "") {
+    console.log("Sorry, we don't have a credit card on file for you.")
+  } else {
+    console.log("Your total cost is ${totalCost}, which will be charged to the card ${cardNumber}.")
+    cart = []
+  }
 }
