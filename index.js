@@ -17,10 +17,32 @@ function addToCart(item) {
 }
 
 function viewCart() {
+  // create array of item/cost
+  var itemCostList = []
+  var item
+  var cost
+  for (let i = 0; i < cart.length; i++) {
+  	item = Object.keys(cart[i])
+  	cost = Object.values(cart[i]).toString()
+  	itemCostList.push(`${item} at $${cost}`)
+  }
+
+  // return messages
+  var note
   if (cart.length === 0) {
     return "Your shopping cart is empty."
   } else if (cart.length === 1) {
-    return `In your cart, you have ${cart[0].[key]}s at $${cart[0].[value]}`
+  	note = itemCostList.toString()
+  	return `In your cart, you have ${note}.`
+  } else if (cart.length === 2) {
+  	note = itemCostList.join(" and ")
+  	return `In your cart, you have ${note}.`
+  } else if (cart.length >= 3) {
+  	var lastItem = itemCostList[itemCostList.length - 1]
+  	itemCostList.pop()
+  	itemCostList.push(`and ${lastItem}`)
+  	note = itemCostList.join(", ")
+  	return `In your cart, you have ${note}.`
   }
 }
 
