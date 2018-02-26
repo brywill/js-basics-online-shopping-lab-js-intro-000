@@ -67,10 +67,9 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  var totalCost = total().toString()
-  var cardNumber = cardNumber
+  var totalCost = total()
   if (parseInt(cardNumber) > 0) {
-    console.log(`Your total cost is ${totalCost}, which will be charged to the card ${cardNumber}.`)
+    console.log(`Your total cost is $${totalCost}, which will be charged to the card ${cardNumber}.`)
     cart = []
   } else {
     console.log("Sorry, we don't have a credit card on file for you.")
