@@ -47,11 +47,12 @@ function viewCart() {
 }
 
 function total() {
-  var cost = 0
+  var totalCost = 0
   for (let i = 0; i < cart.length; i++) {
-    cost = cost + Object.values(cart[i])
+    var itemCost = Object.values(cart[i])
+    totalCost = totalCost + itemCost
   }
-  return cost
+  return totalCost
 }
 
 function removeFromCart(item) {
