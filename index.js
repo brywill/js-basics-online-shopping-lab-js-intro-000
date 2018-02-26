@@ -30,7 +30,7 @@ function viewCart() {
   // return messages
   var note
   if (cart.length === 0) {
-    return "Your shopping cart is empty."
+    print "Your shopping cart is empty."
   } else if (cart.length === 1) {
   	note = itemCostList.toString()
   	return `In your cart, you have ${note}.`
